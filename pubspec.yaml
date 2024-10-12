@@ -31,22 +31,21 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # 持久化插件
-  shared_preferences: ^2.3.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   json_annotation: ^4.9.0
 
+  # 持久化插件
+  shared_preferences: ^2.3.2
+
+  # 全局共享状态
+  provider: ^6.1.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-  # json 解析插件 build_runner_core: ^7.2.9这个是json_model必须的要不报错
-  build_runner_core: ^7.2.9
-  json_model: ^1.0.0
-  json_serializable: ^6.8.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -54,6 +53,12 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
+
+  # json 解析插件 build_runner_core: ^7.2.9这个是json_model必须的要不报错
+  build_runner_core: ^7.2.9
+  json_model: ^1.0.0
+  json_serializable: ^6.8.0
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
