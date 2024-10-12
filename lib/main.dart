@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:github_client/common/global.dart';
 
 void main() {
+  Global.init();
   runApp(const MyApp());
 }
+
+// void main() => Global.init().then((e) => runApp(const MyApp()));
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
