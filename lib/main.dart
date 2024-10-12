@@ -124,3 +124,5 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+// 数据持久化    SharedPreferencesAsync preferences =  SharedPreferencesAsync();
