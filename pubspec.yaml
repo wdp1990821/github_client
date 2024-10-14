@@ -43,6 +43,9 @@ dependencies:
   # 全局共享状态
   provider: ^6.1.2
 
+  # 网络请求库
+  dio: ^5.7.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
