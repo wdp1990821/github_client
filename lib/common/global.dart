@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:github_client/models/index.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'cacheobject.dart';
+import 'git.dart';
+
 const _themes = <MaterialColor>[
   Colors.blue,
   Colors.cyan,
@@ -15,11 +18,14 @@ const _themes = <MaterialColor>[
 class Global {
   static late SharedPreferencesAsync _prefs;
   static Profile profile = Profile();
-  // TODO 网络缓存对象
-  // static NetCache netCache = NetChache();
+  // 网络缓存对象
+  static NetCache netCache = NetCache();
 
   // 可选的主题列表
   static List<MaterialColor> get themes => _themes;
+
+  // 是否为release版
+  static bool get isRelease => const bool.fromEnvironment("dart.vm.product");
 
   // 初始化全局信息，会在App启动时执行
   static Future init() async {
@@ -44,7 +50,7 @@ class Global {
       ..maxCount = 100;
 
     // TODO 初始化网络请求相关配置
-    // Git.init();
+    Git.init();
   }
 
   // 持久化Profile信息
