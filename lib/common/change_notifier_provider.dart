@@ -13,7 +13,7 @@ class ProfileChangeNotifier extends ChangeNotifier {
 }
 
 /// 用户状态
-class userModel extends ProfileChangeNotifier {
+class UserModel extends ProfileChangeNotifier {
   User? get user => _profile.user;
 
   // APP是否登录（如果有用户信息，则证明登录过）
@@ -32,7 +32,7 @@ class userModel extends ProfileChangeNotifier {
 /// APP主题状态
 class ThemeModel extends ProfileChangeNotifier {
   // 获取当前主题，如果未设置主题，则默认使用蓝色主题
-  ColorSwatch get theme => Global.themes
+  MaterialColor get theme => Global.themes
       .firstWhere((e) => e.value == _profile.theme, orElse: () => Colors.blue);
 
   // 主题改变后，通知其他依赖项，新主题会立即生效
