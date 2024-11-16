@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:github_client/common/change_notifier_provider.dart';
 import 'package:github_client/common/global.dart';
-import 'package:github_client/routes/home_route.dart';
+import 'package:github_client/routes/home_page.dart';
 import 'package:github_client/routes/login_route.dart';
 import 'package:provider/provider.dart';
 
@@ -59,6 +59,7 @@ class MyApp extends StatelessWidget {
             },
             routes: <String, WidgetBuilder>{
               "login": (context) => LoginRoute(),
+            
             },
           );
         },

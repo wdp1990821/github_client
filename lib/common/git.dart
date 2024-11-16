@@ -19,7 +19,7 @@ class Git {
   BuildContext? context;
   late Options _options;
 
-  static Dio dio = new Dio(BaseOptions(
+  static Dio dio = Dio(BaseOptions(
     baseUrl: 'https://api.github.com/',
     headers: {
       HttpHeaders.acceptHeader: "application/vnd.github.squirrel-girl-preview,"
@@ -34,14 +34,14 @@ class Git {
     dio.options.headers[HttpHeaders.authorizationHeader] = Global.profile.token;
 
     // 在调试模式下需要抓包调试，所以我们使用代理，并禁用HTTPS证书校验
-    if (!Global.isRelease) {
-      (dio.httpClientAdapter as IOHttpClientAdapter).createHttpClient = () {
-        final client = HttpClient();
-        // 代理工具会提供一个抓包的自签名证书，会通不过证书校验，所以我们禁用证书校验
-        client.badCertificateCallback =
-            (X509Certificate cert, String host, int port) => true;
-      };
-    }
+    // if (!Global.isRelease) {
+    //   (dio.httpClientAdapter as IOHttpClientAdapter).createHttpClient = () {
+    //     final client = HttpClient();
+    //     // 代理工具会提供一个抓包的自签名证书，会通不过证书校验，所以我们禁用证书校验
+    //     client.badCertificateCallback =
+    //         (X509Certificate cert, String host, int port) => true;
+    //   };
+    // }
   }
 
   // 登录接口，登录成功后返回用户信息
